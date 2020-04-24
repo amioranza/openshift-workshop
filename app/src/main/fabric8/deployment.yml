@@ -4,17 +4,7 @@ spec:
       containers:
       - env:
         - name: SPRING_PROFILES_ACTIVE
-          value: mysql
-        - name: SPRING_DATASOURCE_USER
-          valueFrom:
-            secretKeyRef:
-              name: sampledb
-              key: database-user
-        - name: SPRING_DATASOURCE_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: sampledb
-              key: database-password
+          value: openshift
         livenessProbe:
           httpGet:
             path: /actuator/health
